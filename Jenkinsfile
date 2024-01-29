@@ -3,17 +3,17 @@ node {
     tools {
             jdk "JDK"
     }
-    stage{
+    stages{
         stage('Wich java'){
             sh 'java --version'
         }
-    }
 
-    stage('clone repo'){
-        git 'https://github.com/smartinsmm/jenkinstest.git' //git branch: 'main', url: 'https://github.com/smartinsmm/jenkinstest.git'
-    }
+        stage('clone repo'){
+            git 'https://github.com/smartinsmm/jenkinstest.git' //git branch: 'main', url: 'https://github.com/smartinsmm/jenkinstest.git'
+        }
 
-    stage('Build project'){
-        sh "'${mvnHome}/bin/mvn' -X -B -DskipTests clean package"
+        stage('Build project'){
+            sh "'${mvnHome}/bin/mvn' -X -B -DskipTests clean package"
+        }
     }
 }
