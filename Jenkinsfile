@@ -1,6 +1,6 @@
 node {
-    def mvnHome = tool 'maven-3.6.2'
-    
+    def mvnHome = tool 'maven-3.5.2'
+
     stage('clone repo'){
         git 'https://github.com/smartinsmm/jenkinstest.git'
     }
