@@ -1,0 +1,18 @@
+version: '3.9'
+
+networks:
+  devops:
+    name: network-devops
+
+services:
+  jenkins:
+    container_name: jenkins-cont
+    image: jenkins/jenkins:latest
+    restart: always
+    networks:
+      - devops
+    volumes:
+      - E:\devops\jenkins:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
